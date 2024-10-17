@@ -19,7 +19,7 @@ jobs:
       ./.github/workflows/test.yaml
 
   build-and-deploy:
-    if: github.repository == 'cmu-313/NodeBB'
+    if: github.repository == 'CMU-17313Q/NodeBB-P3-finaltest'
     needs: lint-and-test
 
     runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
             "admin:username": "admin",
             "admin:password": "${{ secrets.ADMIN_PASSWORD }}",
             "admin:password:confirm": "${{ secrets.ADMIN_PASSWORD }}",
-            "admin:email": "rohanpadhye@cmu.edu",
+            "admin:email": "efeoflus@andrew.cmu.edu",
             "database": "redis",
             "redis:host": "${{ secrets.REDIS_HOST }}",
             "redis:port": "6379",
@@ -50,5 +50,5 @@ jobs:
         with:
           app-name: 'nodebb-testuser2-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BFAB97B1AB1441ACA7C63280F91AD3F3 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9593645EE1C5476EA8BF8D26B8DD64C8 }}
           package: .
